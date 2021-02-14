@@ -1,0 +1,1 @@
+window.avr8js = require("avr8js");
