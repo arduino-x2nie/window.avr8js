@@ -1,15 +1,49 @@
-body{
-    background: silver;
+
+/** misc **/
+.centered {
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    overflow: visible;
 }
+body{
+    /* background: silver; */
+    background: #e0e0e0;
+    /* background: #111; */
+}
+
+/** LED **/
 .led {
     width: 16px;
     height: 28px;
-    background: rebeccapurple;
+    color: rebeccapurple;
+    color: red;
+    color: #e91e63;
+    /* color: orange; */
+    background-color: currentColor;
+    transition: color .2s, background-color .2s;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     position: relative;
+    display: inline-block;
+    /* margin: 50px; */
+    margin: 25px;
+    box-shadow: inset 4px 3px rgba(255,255,255,0.4);
 }
-.led::before,.led::after{
+.led.green {
+    color:green
+}
+.led.red {
+    color:#e91e63
+}
+.led.blue {
+    color: DodgerBlue
+}
+.led.yellow {
+    color: gold
+}
+
+/* .led::before,.led::after{
     content: '';
     width: 2px;
     height: 10px;
@@ -21,7 +55,96 @@ body{
 .led::after{
     left: auto;
     right: 3px;
+} */
+.led::after{
+    content: '';
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    background: inherit;
+    /* mix-blend-mode: multiply; */
+    /* mix-blend-mode: luminosity; */
+    box-shadow: 
+        inset 4px 3px rgba(255,255,255,0.5),
+        inset 1px 1px 2px  currentColor;
+    /* box-shadow: inset 4px 3px rgba(255,255,255,0.5), inset 1px 1px 2px currentColor, inset -1px -2px 1px rgba(0,0,0,0.2), inset 0 0 11px white; */
+    /* box-shadow: inset 4px 3px rgba(255,255,255,0.5),        inset 1px 1px 2px  currentColor, inset -1px -2px 1px rgba(0,0,0,0.2), inset 0 0 11px white; */
+    box-shadow: inset 5px 1px rgba(255,255,255,0.5), inset 2px 1px currentColor, inset -1px -2px 1px rgba(0,0,0,0.2), inset 0 0 11px white;
 }
-.led.on{
-    background: plum;
+.led.on::after {
+    mix-blend-mode: hard-light;
+    /* mix-blend-mode: color-dodge; */
+    /* box-shadow: 
+        0 0 5px #fff, 
+    0 0 15px 1px currentColor, 
+    0 0 40px currentColor, 
+    0 0 80px currentColor, 
+    0 0 90px currentColor, 
+    0 0 100px currentColor, 
+    0 0 150px currentColor, 
+    inset 4px 3px rgba(255,255,255,0.3), 
+    inset 0 0 12px 2px rgba(255,255,255,0.8); */
+    box-shadow: 4px 2px 7px rgba(255,255,255,0.2),
+    0 0 15px 1px currentColor,
+    0 0 40px currentColor,
+    0 0 80px currentColor,
+    0 0 90px currentColor,
+    0 0 100px currentColor,
+    0 0 150px currentColor,
+    inset 4px 3px 5px rgba(255,255,255,0),
+    inset 1px 16px 8px 2px rgba(255,255,255,0.7),
+    inset 1px 1px currentColor;
 }
+
+/* .led.on::after{
+    
+    box-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 15px 1px currentColor,
+    0 0 40px currentColor,
+    0 0 80px currentColor,
+    0 0 90px currentColor,
+    0 0 100px currentColor,
+    0 0 150px currentColor, 
+    inset 4px 3px rgba(255,255,255,0.3), 
+    inset 0 0 12px 2px rgba(255,255,255,0.8);
+}
+.led.on0{
+    background-color: rgba(255, 255, 255, 0.548);
+    box-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px currentColor,
+    0 0 80px currentColor,
+    0 0 90px currentColor,
+    0 0 100px currentColor,
+    0 0 150px currentColor;
+}
+ */
+
+
+/** foots : anode & catode **/
+.led::before{
+    content: '';
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    border: 2px solid grey;
+    border-top: none;
+    border-bottom: none;
+    top: 28px;
+    left: 3px;
+    
+}
+.led.on::before{
+    opacity: .8;
+}
+
+/* .led {
+    mix-blend-mode: multiply;
+} */
+

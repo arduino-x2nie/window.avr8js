@@ -1,10 +1,33 @@
 <html>
     <head>
         <script src="dist/avr8js.js"></script>
+        <link rel="stylesheet" href="demo/style.css" />
     </head>
     <body>
-        <link rel="stylesheet" href="demo/style.css" />
-        <div id="led1" class="led"></div>
+        <div class="centered">
+            <div id="led" class="led"></div>
+            <div id="led" class="led on"></div>
+            
+            <div id="led" class="led yellow"></div>
+            <div id="led" class="led yellow on"></div>
+            
+            <div id="led" class="led green"></div>
+            <div id="led" class="led green on"></div>
+            
+            <div id="led" class="led blue"></div>
+            <div id="led" class="led blue on"></div>
+            
+            
+            <div id="led" class="led" style="color: purple;"></div>
+            <div id="led" class="led on" style="color: purple;"></div>
+            
+        </div>
+        
+        <div class="centered" style="border: 1px dashed;">
+            <!-- <div id="led" class="led"></div> -->
+            <div id="led1" class="led"></div>
+            <button onclick="togglePause()">PAUSE</button>
+        </div>
 
         <script src="demo/main.js"></script>
     </body>
