@@ -1,0 +1,27 @@
+body{
+    background: silver;
+}
+.led {
+    width: 16px;
+    height: 28px;
+    background: rebeccapurple;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+}
+.led::before,.led::after{
+    content: '';
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    background: grey;
+    top: 28px;
+    left: 3px;
+}
+.led::after{
+    left: auto;
+    right: 3px;
+}
+.led.on{
+    background: plum;
+}
